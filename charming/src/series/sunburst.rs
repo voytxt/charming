@@ -13,6 +13,15 @@ pub struct SunburstLevel {
     r: Option<String>,
     item_style: Option<ItemStyle>,
     label: Option<Label>,
+    #[charming_skip_setter]
+    radius: Option<(String, String)>,
+}
+
+impl SunburstLevel {
+    pub fn radius<S: Into<String>>(mut self, radius: (S, S)) -> Self {
+        self.radius = Some((radius.0.into(), radius.1.into()));
+        self
+    }
 }
 
 #[serde_with::apply(
