@@ -109,6 +109,7 @@ pub struct Sunburst {
     tooltip: Option<Tooltip>,
     #[charming_set_vec]
     data: Vec<SunburstNode>,
+    item_style: Option<ItemStyle>,
 }
 
 impl Sunburst {
